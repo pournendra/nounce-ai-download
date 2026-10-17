@@ -1,46 +1,17 @@
 {
- "version": "0.1.31",
- "file": "downloads/nounce-ai-0.1.31.apk",
- "build": 31,
+ "version": "0.1.32",
+ "file": "downloads/nounce-ai-0.1.32.apk",
+ "build": 32,
  "major": false,
  "force": false,
  "size": "3.2MB",
- "sha256": "ae540abecfc022dbd3c43290a0f745c70d42ef800bdf1b6cf64826168176cb31",
+ "sha256": "5b232408e9ecbfdbd2ad6ab5acbf8856710a5d4d8e9e08b2ded92f2d53937819",
  "date": "Oct 17, 2026",
  "notes": [
-  "Delete your data page linked from Settings",
-  "Quick feedback prompt after your first 10 tasks",
-  "Update pop-up: you will be told when a major update is ready",
-  "Calendar import: Google Calendar and Outlook events show up as tasks"
+  "One-time permissions screen at the start; calendar events appear by default",
+  "Invites share the download link; paste the invite code at signup",
+  "Feedback prompt after your first 10 tasks",
+  "Update pop-up for major releases"
  ],
- "older": [
-  {
-   "version": "0.1.30",
-   "file": "downloads/nounce-ai-0.1.30.apk"
-  },
-  {
-   "version": "0.1.29",
-   "file": "downloads/nounce-ai-0.1.29.apk"
-  },
-  {
-   "version": "0.1.28",
-   "file": "downloads/nounce-ai-0.1.28.apk"
-  },
-  {
-   "version": "0.1.26",
-   "file": "downloads/nounce-ai-0.1.26.apk"
-  },
-  {
-   "version": "0.1.25",
-   "file": "downloads/nounce-ai-0.1.25.apk"
-  },
-  {
-   "version": "0.1.24",
-   "file": "downloads/nounce-ai-0.1.24.apk"
-  },
-  {
-   "version": "0.1.23",
-   "file": "downloads/nounce-ai-0.1.23.apk"
-  }
- ]
+ "older": []
 }

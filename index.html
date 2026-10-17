@@ -54,7 +54,7 @@ ol.inst{padding-left:20px;margin:18px 0 0;color:var(--muted);font-size:15px} ol.
 .notes{margin:0;padding-left:20px;color:var(--muted);font-size:15px}
 .hash{font:12px ui-monospace,Menlo,monospace;word-break:break-all;color:var(--muted)}
 h3{font-size:16px;margin:26px 0 8px}
-.old{padding-left:20px;margin:0}.old a{color:var(--ink)}
+
 
 .shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -24px;padding:6px 24px 18px;scrollbar-width:none}
 .shots::-webkit-scrollbar{display:none}
@@ -106,6 +106,10 @@ h3{font-size:16px;margin:26px 0 8px}
 @keyframes fall2{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(70px) rotate(240deg);opacity:0}}
 @media (prefers-reduced-motion:reduce){.f1 .wave i,.f1 .say2,.f1 .tc,.f2 .pr,.f3 .nt,.f4 .ce,.party i{animation:none!important}.f1 .say2{width:100%;border:0}.f1 .tc,.f2 .pr,.f3 .nt,.f4 .ce{opacity:1}}
 @media (min-width:520px){.shot{width:230px}}
+.invite{margin-top:22px;padding:16px 18px;border-radius:18px;background:var(--card);border:1px solid var(--line);display:grid;gap:6px}
+.invite b{font-size:15px}.invite span{color:var(--muted);font-size:14px}.invite code{font:700 16px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:var(--ink)}
+.invite button{justify-self:start;margin-top:4px;height:38px;padding:0 18px;border-radius:19px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 14px system-ui;cursor:pointer}
+.invite small{color:var(--muted);font-size:12.5px}
 footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
 </style>
 </head>
@@ -113,6 +117,12 @@ footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
 <div class="wrap">
   <div class="top"><img src="icon.png" alt="">nounce ai</div>
 
+  <div class="invite" id="invite" hidden>
+    <b>A friend invited you</b>
+    <span>Your invite code: <code id="invcode"></code></span>
+    <button type="button" id="invcopy">Copy code</button>
+    <small>Download the app below, then paste this code when it asks. You both get free AI credits.</small>
+  </div>
   <h1>No more typing tasks. <em>Just speak.</em></h1>
   <p class="lead">Say it once. nounce ai turns it into a task with the right person, project and time, so nothing ever slips out of your mind.</p>
   <div class="cta">
@@ -196,8 +206,6 @@ footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
     <ul class="notes" id="notes"><li>Loading…</li></ul>
     <h3>Verify the file (optional)</h3>
     <div class="hash" id="hash">SHA-256: …</div>
-    <h3>Older versions</h3>
-    <ul class="old" id="old"><li>None yet.</li></ul>
   </div>
 
   <footer>Early access. Coming to the Play Store soon.<br>nounce ai by Samparkasetu Software Solutions Private Limited · <a href="mailto:founder@samparkasetu.com" style="color:inherit">founder@samparkasetu.com</a><br><a href="privacy.html" style="color:inherit">Privacy</a> · <a href="terms.html" style="color:inherit">Terms</a> · <a href="refund.html" style="color:inherit">Refunds</a></footer>
@@ -209,8 +217,11 @@ fetch('latest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
   document.getElementById('meta').textContent='Version '+d.version+' · '+d.size+' · '+d.date;
   document.getElementById('notes').innerHTML=d.notes.map(n=>'<li>'+n.replace(/</g,'&lt;')+'</li>').join('');
   document.getElementById('hash').textContent='SHA-256: '+d.sha256;
-  if(d.older&&d.older.length)document.getElementById('old').innerHTML=d.older.map(o=>'<li><a href="'+o.file+'" download>v'+o.version+'</a></li>').join('');
 }).catch(()=>{document.getElementById('meta').textContent='Could not load the latest version. Please refresh.'});
+
+(function(){var m=location.search.match(/[?&]ref=([A-Za-z0-9]{6})\b/);if(!m)return;var c=m[1].toUpperCase();
+ document.getElementById('invcode').textContent=c;document.getElementById('invite').hidden=false;
+ document.getElementById('invcopy').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='Copied'}).catch(function(){b.textContent=c})};})();
 </script>
 </body>
 </html>
