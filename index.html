@@ -90,7 +90,21 @@ h3{font-size:16px;margin:26px 0 8px}
 @keyframes nin{0%{opacity:0;transform:translateY(-16px)}8%,88%{opacity:1;transform:none}100%{opacity:0}}
 .nt .bub{display:flex;gap:10px;align-items:center}.nt small{display:block;color:var(--muted);font-weight:600;font-size:12px}.nt .t{flex:1}
 .nt time{color:var(--muted);font-size:11.5px;font-weight:700}
-@media (prefers-reduced-motion:reduce){.f1 .wave i,.f1 .say2,.f1 .tc,.f2 .pr,.f3 .nt{animation:none!important}.f1 .say2{width:100%;border:0}.f1 .tc,.f2 .pr,.f3 .nt{opacity:1}}
+
+/* 4: calendar */
+.f4 .ce{position:absolute;left:18px;right:18px;opacity:0;animation:cin 8s ease infinite}
+.f4 .ce1{top:14px}.f4 .ce2{top:64px;animation-delay:1.4s}.f4 .ce3{top:114px;animation-delay:2.8s}
+@keyframes cin{0%{opacity:0;transform:translateX(-18px)}9%,88%{opacity:1;transform:none}100%{opacity:0}}
+.ce .bub{display:flex;align-items:center;gap:10px;padding:9px 12px}.ce .bub b{flex:1;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ce .bub em{font-style:normal;color:var(--muted);font-weight:700;font-size:12px}
+.src{font:700 10px ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:10px;border:1px dashed var(--muted);color:var(--muted)}
+.party{position:relative;overflow:hidden;padding:12px 14px 12px 14px;border-radius:16px;background:linear-gradient(135deg,var(--btn-a),var(--btn-b));color:#fff;box-shadow:0 8px 20px var(--shadow)}
+.party span{display:block;font:700 10px ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#FFE08A}.party b{display:block;font-size:15px;margin-top:2px}
+.party i{position:absolute;top:-8px;width:5px;height:9px;border-radius:2px;background:#FFE08A;animation:fall2 3s linear infinite}
+.party i:nth-child(2n){background:#fff;width:4px;height:4px;border-radius:50%}
+.party i:nth-child(1){left:8%}.party i:nth-child(2){left:20%;animation-delay:.6s}.party i:nth-child(3){left:34%;animation-delay:1.4s}.party i:nth-child(4){left:48%;animation-delay:.3s}
+.party i:nth-child(5){left:62%;animation-delay:1.9s}.party i:nth-child(6){left:74%;animation-delay:.9s}.party i:nth-child(7){left:86%;animation-delay:2.3s}.party i:nth-child(8){left:94%;animation-delay:1.1s}
+@keyframes fall2{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(70px) rotate(240deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.f1 .wave i,.f1 .say2,.f1 .tc,.f2 .pr,.f3 .nt,.f4 .ce,.party i{animation:none!important}.f1 .say2{width:100%;border:0}.f1 .tc,.f2 .pr,.f3 .nt,.f4 .ce{opacity:1}}
 @media (min-width:520px){.shot{width:230px}}
 footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
 </style>
@@ -118,12 +132,12 @@ footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
   <h2>A look inside</h2>
   <div class="shots" aria-label="Screenshots of the app">
     <figure class="shot"><img src="shots/myday.webp" width="390" height="844" alt="My Day screen with the weekly strip and a mic to add tasks" loading="lazy"><figcaption>Your day at a glance</figcaption></figure>
-    <figure class="shot"><img src="shots/myday-list.webp" width="390" height="844" alt="Tasks for today with people and organisation tags" loading="lazy"><figcaption>Every task, tagged for you</figcaption></figure>
+    <figure class="shot"><img src="shots/calendar.webp" width="390" height="844" alt="Calendar meetings and a birthday celebration card among today's tasks" loading="lazy"><figcaption>Your calendar and birthdays, in one list</figcaption></figure>
     <figure class="shot"><img src="shots/sheet.webp" width="390" height="844" alt="Tap a task to change person, project, time or order" loading="lazy"><figcaption>Tap a task to change anything</figcaption></figure>
     <figure class="shot"><img src="shots/people.webp" width="390" height="844" alt="People list with tasks to discuss" loading="lazy"><figcaption>A profile for every person</figcaption></figure>
   </div>
 
-  <h2>Three things you will love</h2>
+  <h2>Four things you will love</h2>
   <div class="feat">
     <div class="fcard f1"><div class="fstage" aria-hidden="true">
       <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -142,7 +156,14 @@ footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
       <div class="nt"><div class="bub"><div class="t"><b>1 task slipped from earlier</b><small>Finish it or move it to today</small></div><time>1:00</time></div></div>
       <div class="nt"><div class="bub"><div class="t"><b>Client sync in 30 minutes</b><small>Mark done or snooze</small></div><time>1:30</time></div></div>
     </div><div class="fcap"><b>3. Nothing slips through</b><span>Gentle nudges all day for open and overdue tasks, so a busy day never swallows one.</span></div></div>
+
+    <div class="fcard f4"><div class="fstage" aria-hidden="true">
+      <div class="ce ce1"><div class="bub"><span class="src">Outlook</span><b>Board prep</b><em>11:30</em></div></div>
+      <div class="ce ce2"><div class="bub"><span class="src">Google</span><b>Investor update call</b><em>5:00</em></div></div>
+      <div class="ce ce3"><div class="party"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span>Birthday · Today</span><b>Meera's birthday</b></div></div>
+    </div><div class="fcap"><b>4. Your calendar, in one place</b><span>Google Calendar and Outlook events flow in from your phone, nothing uploaded. Birthdays get a celebration card.</span></div></div>
   </div>
+
 
   <h2>Built for people who are always on</h2>
   <ul class="list">
@@ -158,6 +179,7 @@ footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
     <tr><td>People</td><td>A text label, if any</td><td>A profile per person, built as you speak</td></tr>
     <tr><td>Work vs personal</td><td>You sort it yourself</td><td>Sorted for you</td></tr>
     <tr><td>Forgetting</td><td>One reminder, easy to miss</td><td>Nudges all day until done</td></tr>
+    <tr><td>Your calendar</td><td>A separate app</td><td>Meetings and birthdays flow in</td></tr>
     <tr><td>Your data</td><td>Often in the cloud</td><td>On your phone</td></tr>
   </table>
 
