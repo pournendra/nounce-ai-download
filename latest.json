@@ -1,18 +1,21 @@
 {
- "version": "0.1.25",
- "file": "downloads/nounce-ai-0.1.25.apk",
+ "version": "0.1.26",
+ "file": "downloads/nounce-ai-0.1.26.apk",
  "size": "3.2MB",
- "sha256": "1848f4a50fcdc4dcb7994989f323ecf6b77801c0295cf744079a51dc879d4e30",
+ "sha256": "99d2aebd25328c6809be3ca3a5c2931af70f7af291788dd4a98d1649746425ca",
  "date": "Oct 17, 2026",
  "notes": [
-  "App icon and wordmark now in Poppins",
-  "New black app icon, black theme until you choose female",
+  "Dropdowns now match the app's own design",
+  "More reliable voice on slow connections, clearer error messages",
+  "App icon and wordmark in Poppins",
   "Move tasks up or down; finished tasks go to the bottom",
-  "Pick people and projects from a dropdown",
-  "Choose your morning plan time and quiet hours",
-  "Privacy, terms and refund pages"
+  "Choose your morning plan time and quiet hours"
  ],
  "older": [
+  {
+   "version": "0.1.25",
+   "file": "downloads/nounce-ai-0.1.25.apk"
+  },
   {
    "version": "0.1.24",
    "file": "downloads/nounce-ai-0.1.24.apk"
