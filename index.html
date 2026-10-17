@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nounce ai: download for Android</title>
+<meta name="description" content="Speak your tasks. nounce ai understands them. Download the Android app.">
+<link rel="icon" href="icon.png">
+<style>
+:root{--ink:#1A1418;--muted:#6E6068;--brand:#C8102E;--brand-hi:#DD2C63;--line:#F3D9E0;--bg:#fff;--card:#FFF7F9}
+@media (prefers-color-scheme:dark){:root{--ink:#F6EEF1;--muted:#B5A5AC;--line:#3A2A31;--bg:#150F12;--card:#1F161A}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:560px;margin:0 auto;padding:40px 24px 64px}
+.top{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px;color:var(--brand);letter-spacing:-.02em}
+.top img{width:44px;height:44px;border-radius:12px}
+h1{font-size:34px;line-height:1.12;letter-spacing:-.025em;margin:36px 0 12px}
+.lead{color:var(--muted);font-size:17px;margin:0}
+.dl{margin-top:30px;padding:22px;border-radius:22px;background:var(--card);border:1px solid var(--line)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border-radius:28px;background:linear-gradient(135deg,var(--brand-hi),var(--brand));color:#fff;text-decoration:none;font-weight:700;font-size:17px;box-shadow:0 10px 22px rgba(200,16,46,.28)}
+.btn[aria-disabled=true]{opacity:.55;pointer-events:none}
+.meta{margin:14px 0 0;color:var(--muted);font-size:13.5px;text-align:center}
+h2{font-size:19px;margin:38px 0 10px}
+ol{padding-left:20px;margin:0;color:var(--muted)} ol li{margin:8px 0} ol b{color:var(--ink)}
+.notes{margin:0;padding-left:20px;color:var(--muted)}
+.hash{font:12px ui-monospace,Menlo,monospace;word-break:break-all;color:var(--muted)}
+.old a{color:var(--brand)} .old li{margin:4px 0}
+footer{margin-top:44px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><img src="icon.png" alt="">nounce ai</div>
+  <h1>No more typing tasks. Just speak.</h1>
+  <p class="lead">Say it once and nounce ai files it with the right person, project and time. Your ideas and to-dos never leave your mind.</p>
+
+  <div class="dl">
+    <a id="btn" class="btn" href="#" aria-disabled="true">Download for Android</a>
+    <p class="meta" id="meta">Checking the latest version…</p>
+  </div>
+
+  <h2>How to install</h2>
+  <ol>
+    <li><b>Tap Download</b>, then open the file when it finishes.</li>
+    <li>If Android asks, allow <b>Install unknown apps</b> for your browser. This is normal for apps outside the Play Store.</li>
+    <li>Tap <b>Install</b>. Later versions install over this one, and your tasks stay.</li>
+  </ol>
+
+  <h2>What is new</h2>
+  <ul class="notes" id="notes"><li>Loading…</li></ul>
+
+  <h2>Verify the file <span style="font-weight:400;color:var(--muted);font-size:14px">(optional)</span></h2>
+  <div class="hash" id="hash">SHA-256: …</div>
+
+  <h2>Older versions</h2>
+  <ul class="old" id="old"><li>None yet.</li></ul>
+
+  <footer>Early access build. It will move to the Play Store soon. Your tasks are stored on your phone.</footer>
+</div>
+<script>
+fetch('latest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+  const b=document.getElementById('btn');
+  b.href=d.file;b.setAttribute('download','');b.removeAttribute('aria-disabled');
+  b.textContent='Download v'+d.version+' for Android';
+  document.getElementById('meta').textContent='Version '+d.version+' · '+d.size+' · '+d.date+' · Android 7 or newer';
+  document.getElementById('notes').innerHTML=d.notes.map(n=>'<li>'+n.replace(/</g,'&lt;')+'</li>').join('');
+  document.getElementById('hash').textContent='SHA-256: '+d.sha256;
+  if(d.older&&d.older.length)document.getElementById('old').innerHTML=d.older.map(o=>'<li><a href="'+o.file+'" download>v'+o.version+'</a></li>').join('');
+}).catch(()=>{document.getElementById('meta').textContent='Could not load the latest version. Please refresh.'});
+</script>
+</body>
+</html>
