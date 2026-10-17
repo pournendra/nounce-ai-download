@@ -1,15 +1,20 @@
 {
- "version": "0.1.23",
- "file": "downloads/nounce-ai-0.1.23.apk",
+ "version": "0.1.24",
+ "file": "downloads/nounce-ai-0.1.24.apk",
  "size": "3.2MB",
- "sha256": "d5cd7745726ca619d45c47907b6e0f64bee4a32b66c46c1ef427c295baa38e54",
+ "sha256": "a7730851b9a34c512a436ff0eba913513df7b5cb7533928d8a015cc4cc653dc6",
  "date": "Oct 17, 2026",
  "notes": [
-  "Black theme for men, red for women, switching during setup",
-  "Speak-first training with People and Projects explained",
-  "Tap any task to edit it, no Edit button",
-  "All-day reminders so nothing is forgotten",
-  "Smoother scrolling and roomier screens"
+  "New black app icon, black theme until you choose female",
+  "Move tasks up or down; finished tasks go to the bottom",
+  "Pick people and projects from a dropdown",
+  "Choose your morning plan time and quiet hours",
+  "Privacy, terms and refund pages"
  ],
- "older": []
+ "older": [
+  {
+   "version": "0.1.23",
+   "file": "downloads/nounce-ai-0.1.23.apk"
+  }
+ ]
 }
