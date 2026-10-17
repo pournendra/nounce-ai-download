@@ -1,17 +1,17 @@
 {
- "version": "0.1.33",
- "file": "downloads/nounce-ai-0.1.33.apk",
- "build": 33,
+ "version": "0.1.34",
+ "file": "downloads/nounce-ai-0.1.34.apk",
+ "build": 34,
  "major": true,
  "force": false,
- "size": "3.2MB",
- "sha256": "d77a6a31a6857b9f1fef31427449874bb1a4fad93bc3b89207ded1da4f8caac7",
+ "size": "4.5MB",
+ "sha256": "2d72050b1880d7236ecda56a5b63a7fbafec78a2294113bbf98aba211839a0db",
  "date": "Oct 17, 2026",
  "notes": [
+  "Stay in the loop: important updates can now reach you as notifications",
   "Allow everything once at the start, then it just works",
   "Your calendar events show up by default",
-  "Invite friends with a download link; paste the code at signup",
-  "Reminder if you have not updated yet"
+  "Invite friends with a download link; paste the code at signup"
  ],
  "older": []
 }
