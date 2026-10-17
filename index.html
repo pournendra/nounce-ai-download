@@ -55,6 +55,43 @@ ol.inst{padding-left:20px;margin:18px 0 0;color:var(--muted);font-size:15px} ol.
 .hash{font:12px ui-monospace,Menlo,monospace;word-break:break-all;color:var(--muted)}
 h3{font-size:16px;margin:26px 0 8px}
 .old{padding-left:20px;margin:0}.old a{color:var(--ink)}
+
+.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -24px;padding:6px 24px 18px;scrollbar-width:none}
+.shots::-webkit-scrollbar{display:none}
+.shot{flex:none;width:210px;scroll-snap-align:center;margin:0}
+.shot img{display:block;width:100%;height:auto;border-radius:26px;border:5px solid var(--ink);box-shadow:0 18px 36px var(--shadow);background:#fff}
+.shot figcaption{margin-top:12px;text-align:center;font-size:13.5px;color:var(--muted)}
+.feat{display:grid;gap:16px}
+.fcard{border-radius:22px;background:var(--card);border:1px solid var(--line);overflow:hidden}
+.fstage{position:relative;height:200px;padding:18px;background:linear-gradient(160deg,var(--soft),var(--card))}
+.fcap{padding:16px 20px 20px}.fcap b{display:block;font-size:17px}.fcap span{color:var(--muted);font-size:15px}
+.bub{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:11px 14px;font-size:14px;font-weight:600;box-shadow:0 6px 16px var(--shadow)}
+/* 1: speak */
+.f1 .wave{display:flex;align-items:center;gap:4px;height:26px;margin-bottom:10px}
+.f1 .wave i{width:4px;border-radius:2px;background:var(--ink);animation:w 1s ease-in-out infinite}
+.f1 .wave i:nth-child(2n){animation-delay:.15s}.f1 .wave i:nth-child(3n){animation-delay:.3s}.f1 .wave i:nth-child(5n){animation-delay:.45s}
+@keyframes w{0%,100%{height:5px}50%{height:24px}}
+.f1 .say2{display:inline-block;max-width:100%;overflow:hidden;white-space:nowrap;border-right:2px solid var(--ink);font-size:14px;font-weight:600;animation:type 6s steps(34,end) infinite,caret .7s step-end infinite}
+@keyframes type{0%{width:0}38%,100%{width:100%}}
+@keyframes caret{50%{border-color:transparent}}
+.f1 .tc{position:absolute;left:18px;right:18px;bottom:16px;animation:pop 6s ease infinite}
+@keyframes pop{0%,40%{opacity:0;transform:translateY(14px) scale(.96)}50%,92%{opacity:1;transform:none}100%{opacity:0}}
+.tc b{display:flex;justify-content:space-between;font-size:14px}.tc b span{color:var(--muted);font-weight:600;font-size:12.5px}
+.tc .chips{display:flex;gap:6px;margin-top:7px}.tc .chips i{font-style:normal;padding:2px 10px;border-radius:11px;background:var(--soft);font-size:11.5px;font-weight:700}
+/* 2: people */
+.f2 .pr{display:flex;align-items:center;gap:10px;margin-bottom:9px;opacity:0;animation:pin 7s ease infinite}
+.f2 .pr:nth-child(2){animation-delay:.9s}.f2 .pr:nth-child(3){animation-delay:1.8s}
+@keyframes pin{0%{opacity:0;transform:translateX(-14px)}10%,86%{opacity:1;transform:none}100%{opacity:0}}
+.av{flex:none;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--btn-a),var(--btn-b));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.pr .bub{flex:1;display:flex;justify-content:space-between;gap:8px;padding:8px 12px}.pr .bub em{font-style:normal;color:var(--muted);font-weight:600;font-size:12.5px;white-space:nowrap}
+/* 3: reminders */
+.f3 .nt{position:absolute;left:18px;right:18px;opacity:0;animation:nin 8s ease infinite}
+.f3 .nt:nth-child(1){top:16px}.f3 .nt:nth-child(2){top:70px;animation-delay:1.6s}.f3 .nt:nth-child(3){top:124px;animation-delay:3.2s}
+@keyframes nin{0%{opacity:0;transform:translateY(-16px)}8%,88%{opacity:1;transform:none}100%{opacity:0}}
+.nt .bub{display:flex;gap:10px;align-items:center}.nt small{display:block;color:var(--muted);font-weight:600;font-size:12px}.nt .t{flex:1}
+.nt time{color:var(--muted);font-size:11.5px;font-weight:700}
+@media (prefers-reduced-motion:reduce){.f1 .wave i,.f1 .say2,.f1 .tc,.f2 .pr,.f3 .nt{animation:none!important}.f1 .say2{width:100%;border:0}.f1 .tc,.f2 .pr,.f3 .nt{opacity:1}}
+@media (min-width:520px){.shot{width:230px}}
 footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
 </style>
 </head>
@@ -78,6 +115,35 @@ footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
     </div>
   </div>
 
+  <h2>A look inside</h2>
+  <div class="shots" aria-label="Screenshots of the app">
+    <figure class="shot"><img src="shots/myday.webp" width="390" height="844" alt="My Day screen with the weekly strip and a mic to add tasks" loading="lazy"><figcaption>Your day at a glance</figcaption></figure>
+    <figure class="shot"><img src="shots/myday-list.webp" width="390" height="844" alt="Tasks for today with people and organisation tags" loading="lazy"><figcaption>Every task, tagged for you</figcaption></figure>
+    <figure class="shot"><img src="shots/sheet.webp" width="390" height="844" alt="Tap a task to change person, project, time or order" loading="lazy"><figcaption>Tap a task to change anything</figcaption></figure>
+    <figure class="shot"><img src="shots/people.webp" width="390" height="844" alt="People list with tasks to discuss" loading="lazy"><figcaption>A profile for every person</figcaption></figure>
+  </div>
+
+  <h2>Three things you will love</h2>
+  <div class="feat">
+    <div class="fcard f1"><div class="fstage" aria-hidden="true">
+      <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="say2">“Call Meera tomorrow 4pm about the contract”</div>
+      <div class="bub tc"><b>Call Meera <span>Tomorrow · 4 PM</span></b><div class="chips"><i>Meera</i><i>Work</i></div></div>
+    </div><div class="fcap"><b>1. Speak, and it is a task</b><span>No typing, no forms. Say it once and the person, project and time are filled in.</span></div></div>
+
+    <div class="fcard f2"><div class="fstage" aria-hidden="true">
+      <div class="pr"><div class="av">A</div><div class="bub"><b>Akshay</b><em>3 to discuss</em></div></div>
+      <div class="pr"><div class="av">M</div><div class="bub"><b>Meera</b><em>2 to discuss</em></div></div>
+      <div class="pr"><div class="av">D</div><div class="bub"><b>Dinesh</b><em>1 to discuss</em></div></div>
+    </div><div class="fcap"><b>2. People appear as you speak</b><span>Say a name and a profile is made. Open it before a 1:1 to see everything to discuss.</span></div></div>
+
+    <div class="fcard f3"><div class="fstage" aria-hidden="true">
+      <div class="nt"><div class="bub"><div class="t"><b>Good morning. 4 tasks today</b><small>First up: PRD review at 12:00 PM</small></div><time>7:00</time></div></div>
+      <div class="nt"><div class="bub"><div class="t"><b>1 task slipped from earlier</b><small>Finish it or move it to today</small></div><time>1:00</time></div></div>
+      <div class="nt"><div class="bub"><div class="t"><b>Client sync in 30 minutes</b><small>Mark done or snooze</small></div><time>1:30</time></div></div>
+    </div><div class="fcap"><b>3. Nothing slips through</b><span>Gentle nudges all day for open and overdue tasks, so a busy day never swallows one.</span></div></div>
+  </div>
+
   <h2>Built for people who are always on</h2>
   <ul class="list">
     <li><b>You manage tons of tasks</b><span>Ideas and to-dos arrive mid-meeting, mid-walk, mid-everything. Catch them in seconds.</span></li>
@@ -94,13 +160,6 @@ footer{margin-top:44px;color:var(--muted);font-size:13px;text-align:center}
     <tr><td>Forgetting</td><td>One reminder, easy to miss</td><td>Nudges all day until done</td></tr>
     <tr><td>Your data</td><td>Often in the cloud</td><td>On your phone</td></tr>
   </table>
-
-  <h2>Simple as 1, 2, 3</h2>
-  <ol class="steps">
-    <li><div><b>Tap the mic and speak</b><span>Like you would to an assistant.</span></div></li>
-    <li><div><b>We understand</b><span>Task, person, project, date and time. Tap to change anything.</span></div></li>
-    <li><div><b>Get on with your day</b><span>We remind you. Swipe right when it is done.</span></div></li>
-  </ol>
 
   <h2 id="get">Try it. It takes a minute.</h2>
   <div class="dl">
