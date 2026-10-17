@@ -1,17 +1,23 @@
 {
- "version": "0.1.28",
- "file": "downloads/nounce-ai-0.1.28.apk",
+ "version": "0.1.29",
+ "file": "downloads/nounce-ai-0.1.29.apk",
+ "build": 29,
+ "major": false,
+ "force": false,
  "size": "3.2MB",
- "sha256": "e8464c2befdd13119abecab5547868c66c87581462dfe3bafa83f1d3a58f04f7",
+ "sha256": "bf42ada24784f8858910768a9f8fb2d0b04ade5f1ad56eb575fc66c1a651896e",
  "date": "Oct 17, 2026",
  "notes": [
+  "Update pop-up: you will be told when a major update is ready",
   "Calendar import: Google Calendar and Outlook events show up as tasks",
   "Birthdays and celebrations get their own confetti card",
-  "Dropdowns match the app's design",
-  "More reliable voice on slow connections",
-  "App icon and wordmark in Poppins"
+  "Dropdowns match the app's design"
  ],
  "older": [
+  {
+   "version": "0.1.28",
+   "file": "downloads/nounce-ai-0.1.28.apk"
+  },
   {
    "version": "0.1.26",
    "file": "downloads/nounce-ai-0.1.26.apk"
