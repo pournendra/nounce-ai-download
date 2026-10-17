@@ -1,17 +1,21 @@
 {
- "version": "0.1.26",
- "file": "downloads/nounce-ai-0.1.26.apk",
+ "version": "0.1.28",
+ "file": "downloads/nounce-ai-0.1.28.apk",
  "size": "3.2MB",
- "sha256": "99d2aebd25328c6809be3ca3a5c2931af70f7af291788dd4a98d1649746425ca",
+ "sha256": "e8464c2befdd13119abecab5547868c66c87581462dfe3bafa83f1d3a58f04f7",
  "date": "Oct 17, 2026",
  "notes": [
-  "Dropdowns now match the app's own design",
-  "More reliable voice on slow connections, clearer error messages",
-  "App icon and wordmark in Poppins",
-  "Move tasks up or down; finished tasks go to the bottom",
-  "Choose your morning plan time and quiet hours"
+  "Calendar import: Google Calendar and Outlook events show up as tasks",
+  "Birthdays and celebrations get their own confetti card",
+  "Dropdowns match the app's design",
+  "More reliable voice on slow connections",
+  "App icon and wordmark in Poppins"
  ],
  "older": [
+  {
+   "version": "0.1.26",
+   "file": "downloads/nounce-ai-0.1.26.apk"
+  },
   {
    "version": "0.1.25",
    "file": "downloads/nounce-ai-0.1.25.apk"
