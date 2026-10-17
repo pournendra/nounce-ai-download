@@ -1,17 +1,17 @@
 {
- "version": "0.1.32",
- "file": "downloads/nounce-ai-0.1.32.apk",
- "build": 32,
- "major": false,
+ "version": "0.1.33",
+ "file": "downloads/nounce-ai-0.1.33.apk",
+ "build": 33,
+ "major": true,
  "force": false,
  "size": "3.2MB",
- "sha256": "5b232408e9ecbfdbd2ad6ab5acbf8856710a5d4d8e9e08b2ded92f2d53937819",
+ "sha256": "d77a6a31a6857b9f1fef31427449874bb1a4fad93bc3b89207ded1da4f8caac7",
  "date": "Oct 17, 2026",
  "notes": [
-  "One-time permissions screen at the start; calendar events appear by default",
-  "Invites share the download link; paste the invite code at signup",
-  "Feedback prompt after your first 10 tasks",
-  "Update pop-up for major releases"
+  "Allow everything once at the start, then it just works",
+  "Your calendar events show up by default",
+  "Invite friends with a download link; paste the code at signup",
+  "Reminder if you have not updated yet"
  ],
  "older": []
 }
